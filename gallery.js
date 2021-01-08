@@ -11,27 +11,25 @@ let imageDest = [
   `Sloth ipsum, dolor sit amet consectetur adipisicing elit. Voluptate modi deleniti iste laboriosam quasi dolores magnam ipsum eligendi obcaecati blanditiis repellendus id saepe tempore, asperiores eaque maxime exercitationem ducimus nisi.`,
   `Africa ipsum, dolor sit amet consectetur adipisicing elit. Voluptate modi deleniti iste laboriosam quasi dolores magnam ipsum eligendi obcaecati blanditiis repellendus id saepe tempore, asperiores eaque maxime exercitationem ducimus nisi.`,
 ];
+
 let counter = 0;
-//setup start image
 const imageShow = document.querySelector('#image-show');
 const theImage = document.createElement('img');
 theImage.setAttribute('id', 'theImage');
 theImage.setAttribute('src', imageList[0]);
 imageShow.appendChild(theImage);
-//add title
+
 const imageDescription = document.querySelector('#image-description');
 const title = document.createElement('h1');
 title.setAttribute('class', 'imageTitle');
-const deleteTitle = document.querySelector('.imageTitle');
 title.innerHTML = imageTitle[0];
 imageDescription.appendChild(title);
-//add description
+
 const description = document.createElement('p');
 description.setAttribute('class', 'imageDescription');
-const deleteDest = document.querySelector('.imageDescription');
 description.innerHTML = imageDest[0];
 imageDescription.appendChild(description);
-//add icons
+
 for (let i = 0; i < imageList.length; i++) {
   const icons = document.querySelector('#image-gallery-icons');
 
@@ -49,8 +47,11 @@ for (let i = 0; i < imageList.length; i++) {
   icons.appendChild(iconDiv);
   iconDiv.appendChild(imgIcons);
 }
+
 const theIcons = document.querySelectorAll('#theIcons');
-//click on icons
+const deleteTitle = document.querySelector('.imageTitle');
+const deleteDest = document.querySelector('.imageDescription');
+
 for (let i = 0; i < theIcons.length; i++) {
     theIcons[i].onclick = () => {
     deleteTitle.remove();
@@ -74,7 +75,7 @@ for (let i = 0; i < theIcons.length; i++) {
     theImage.setAttribute('src', toShow);
   };
 }
-// right button
+
 const rightButton = document.querySelector('#right-button');
 rightButton.onclick = () => {
   deleteTitle.remove();
@@ -98,7 +99,7 @@ rightButton.onclick = () => {
   theImage.setAttribute('src', imageList[counter]);
   imageShow.appendChild(theImage);
 };
-//left button
+
 const leftButton = document.querySelector('#left-button');
 leftButton.onclick = () => {
   deleteTitle.remove();
